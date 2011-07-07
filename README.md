@@ -2,7 +2,8 @@ CopyPasta
 =========
 
 A simple, websocket-based, chat-esque solution to copy-paste problems in RDP and/or VMWare.
-Uses embedded [Jetty](http://www.eclipse.org/jetty/) and is packaged as an executable JAR.
+
+Uses embedded [Jetty](http://www.eclipse.org/jetty/) and is packaged as an executable JAR using [Maven](http://maven.apache.org/) Shade Plugin.
 
 ***
 
@@ -15,7 +16,8 @@ Download the latest source at:
 
 and run it:
 
-	java -jar copypasta.jar 8080
+	mvn clean package
+	java -jar target/copypasta.jar 8080
 
 where 8080 is the port that Jetty wil listen on.
 
