@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>CopyPasta!</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/jquery-1.6.2.min.js"></script>
+		<script src="js/port.js"></script>
+		<script>
+			var ws;
+			$(document).ready(function(){
+				ws = new WebSocket("ws://" + host + ":" + port + "/CopyPastaWS/anything");
+				ws.onopen = function(event){
+					console.log('Opened');
+				}
+				ws.onmessage = function(event){
+					onMessage(event.data);
+				}
+				ws.onclose = function(event){
+					console.log('Closed');
+				}
+			});
+			function onMessage(msg){
+				$('#messages').prepend($('<p>').append($('<pre>').text(msg)));
+			}
+			$(function(){
+				$('#sendButton').click(function(){
+					var msg = $('#newContent').val();
+					onMessage(msg);
+					ws.send(msg);
+					$('#newContent').val('').focus();
+					return false;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="body">
+			<div id="newContentLayer">
+				<textarea name="newContent" id="newContent" cols="70" rows="6"></textarea>
+				<br/>
+				<button id="sendButton">Send</button>
+			</div>
+			<div id="messages"></div>
+		</div>
+	</body>
+</html>

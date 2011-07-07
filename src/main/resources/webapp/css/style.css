@@ -1,0 +1,55 @@
+body {
+	font: 12px arial;
+	background: #AAA;
+	color: #222;
+	text-align: center;
+	padding: 35px;
+}
+
+form, p, span {
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	font: 12px arial;
+}
+
+a {
+	color: #0000FF;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+	
+#newContentLayer {
+	position: fixed;
+	margin: 0;
+	top: 0;
+	left: 0;
+	background: #FFF;
+	width: 100%;
+}
+
+#sendButton {
+	width: 250px;
+	height: 24px;
+	margin: 2px 0px 5px 0px;
+}
+
+#messages {
+	margin: 100px 0px 0px 0px;
+}
+
+#messages p {
+	background: #FFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	width: 90%;
+	margin: 5px auto;
+	padding: 5px 15px;
+	text-align: left;
+}
