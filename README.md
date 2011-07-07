@@ -19,7 +19,7 @@ and run it:
 	mvn clean package
 	java -jar target/copypasta.jar 8080
 
-where 8080 is the port that Jetty wil listen on.
+where `8080` is the port that Jetty will listen on.
 
 Then open a browser in each machine you want to send text between and copypasta away!
 
